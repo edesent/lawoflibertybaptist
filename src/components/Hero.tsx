@@ -26,7 +26,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-[2] text-center max-w-4xl px-5 py-10">
-        <p className="text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-white/75 mb-8 animate-fade-up animation-delay-200">
+        <p className="mt-10 text-xs md:text-sm font-semibold tracking-[0.3em] uppercase text-white/75 mb-8 animate-fade-up animation-delay-200">
           Welcome to
         </p>
 
