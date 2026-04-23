@@ -57,16 +57,17 @@ export default function Services() {
         <svg viewBox="0 0 1920 800" className="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="servBg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#2a1118" />
-              <stop offset="100%" stopColor="#1a0b10" />
+              <stop offset="0%" stopColor="#0a2849" />
+              <stop offset="50%" stopColor="#134680" />
+              <stop offset="100%" stopColor="#0a2849" />
             </linearGradient>
           </defs>
           <rect width="1920" height="800" fill="url(#servBg)" />
-          <circle cx="960" cy="400" r="320" fill="rgba(212,168,74,0.05)" />
-          <circle cx="960" cy="400" r="180" fill="rgba(212,168,74,0.05)" />
+          <circle cx="960" cy="400" r="320" fill="rgba(124,195,245,0.06)" />
+          <circle cx="960" cy="400" r="180" fill="rgba(124,195,245,0.06)" />
         </svg>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(42,17,24,0.92)] to-[rgba(26,11,16,0.96)] z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,40,73,0.92)] to-[rgba(12,61,120,0.96)] z-[1]" />
 
       <div className="relative z-[2] max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">

@@ -11,21 +11,21 @@ export default function Welcome() {
             <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-cream-dark">
               {/* Placeholder — swap for /pastor.jpg when available */}
               <svg viewBox="0 0 400 500" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-                <rect width="400" height="500" fill="#efe4cc" />
-                <circle cx="200" cy="200" r="70" fill="#d4a84a" opacity="0.35" />
+                <rect width="400" height="500" fill="#d9ecfb" />
+                <circle cx="200" cy="200" r="70" fill="#1e7ad2" opacity="0.35" />
                 <path
                   d="M120 420 C 120 340, 280 340, 280 420 L 280 500 L 120 500 Z"
-                  fill="#d4a84a"
-                  opacity="0.25"
+                  fill="#1e7ad2"
+                  opacity="0.3"
                 />
                 <text
                   x="200"
                   y="470"
                   textAnchor="middle"
-                  fill="#6b2d3e"
+                  fill="#0c3d78"
                   fontSize="14"
                   fontFamily="serif"
-                  opacity="0.55"
+                  opacity="0.65"
                 >
                   Pastor Adam Fannin
                 </text>

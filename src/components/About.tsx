@@ -19,7 +19,7 @@ const cards: Card[] = [
     placeholder: "Church Building",
     href: "/history",
     linkLabel: "Read Our Story",
-    iconColor: "#d4a84a",
+    iconColor: "#1e7ad2",
   },
   {
     title: "Our Beliefs",
@@ -27,7 +27,7 @@ const cards: Card[] = [
     placeholder: "Open KJV Bible",
     href: "/statement-of-faith",
     linkLabel: "Read Our Statement of Faith",
-    iconColor: "#7a3546",
+    iconColor: "#2b82d6",
   },
   {
     title: "Our Mission",
@@ -35,7 +35,7 @@ const cards: Card[] = [
     placeholder: "Family at Worship",
     href: "/mission",
     linkLabel: "Learn About Our Mission",
-    iconColor: "#6b2d3e",
+    iconColor: "#0c3d78",
   },
 ];
 
@@ -64,7 +64,7 @@ export default function About() {
                     <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
                   ) : (
                     <svg viewBox="0 0 400 280" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-                      <rect width="400" height="280" fill="#efe4cc" />
+                      <rect width="400" height="280" fill="#f0f7fd" />
                       <circle cx="200" cy="140" r="70" fill={card.iconColor} opacity="0.18" />
                       <rect
                         x="150"

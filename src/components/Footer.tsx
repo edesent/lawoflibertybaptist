@@ -18,27 +18,16 @@ const serviceTimes = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a0b10] text-white/70 pt-20">
+    <footer className="bg-brown-deep text-white/70 pt-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/[.08]">
           {/* Brand */}
           <div className="flex flex-col items-center text-center">
-            <svg viewBox="0 0 40 40" className="w-14 h-14 text-gold mb-4" fill="none">
-              <path
-                d="M20 4 L28 12 L28 24 L32 28 L32 36 L8 36 L8 28 L12 24 L12 12 Z"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M20 10 V20 M15 15 H25"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-            <p className="font-serif text-lg text-gold mb-1">Law of Liberty</p>
-            <p className="text-xs tracking-[0.25em] uppercase text-white/40 mb-4">Baptist Church</p>
+            <img
+              src="/law-of-liberty-logo.png"
+              alt="Law of Liberty Baptist Church"
+              className="w-44 mb-5"
+            />
             <p className="text-sm leading-relaxed">
               485 Halsema Rd N<br />
               Jacksonville, FL 32220<br />

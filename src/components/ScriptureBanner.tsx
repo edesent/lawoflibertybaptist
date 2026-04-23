@@ -5,19 +5,19 @@ export default function ScriptureBanner() {
         <svg viewBox="0 0 1920 400" className="w-full h-full object-cover" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="sbg" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="#2a1118" />
-              <stop offset="100%" stopColor="#4a1a26" />
+              <stop offset="0%" stopColor="#0a2849" />
+              <stop offset="100%" stopColor="#1e7ad2" />
             </linearGradient>
           </defs>
           <rect width="1920" height="400" fill="url(#sbg)" />
           {/* Soft decorative arches */}
           <path
             d="M0 400 C 480 240, 960 240, 1440 400 L 1920 400 L 1920 0 L 0 0 Z"
-            fill="rgba(212,168,74,0.04)"
+            fill="rgba(255,255,255,0.05)"
           />
         </svg>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-br from-brown-deep/85 to-burgundy/80" />
+      <div className="absolute inset-0 bg-gradient-to-br from-brown-deep/85 to-brown-light/70" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <svg viewBox="0 0 40 40" className="w-10 h-10 text-gold mx-auto mb-6" fill="none">

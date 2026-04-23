@@ -48,38 +48,22 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled || isSubPage
-          ? "bg-brown-deep/[.97] py-3 shadow-lg backdrop-blur-sm"
-          : "py-5"
+          ? "bg-brown-deep/95 py-2 shadow-lg backdrop-blur-sm"
+          : "py-3 bg-gradient-to-b from-brown-deep/60 to-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a
           href="#home"
           onClick={(e) => handleLinkClick(e, "#home")}
-          className="flex items-center gap-3 text-white"
+          className="flex items-center"
+          aria-label="Law of Liberty Baptist Church"
         >
-          <svg viewBox="0 0 40 40" className="w-9 h-9 text-gold" fill="none">
-            <path
-              d="M20 4 L28 12 L28 24 L32 28 L32 36 L8 36 L8 28 L12 24 L12 12 Z"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M20 10 V20 M15 15 H25"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-          <div className="flex flex-col">
-            <span className="text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-gold whitespace-nowrap">
-              Law of Liberty
-            </span>
-            <span className="hidden sm:inline text-[0.62rem] tracking-[0.25em] uppercase text-white/55">
-              Baptist Church
-            </span>
-          </div>
+          <img
+            src="/lol-logo-favco.png"
+            alt="Law of Liberty Baptist Church"
+            className="h-12 sm:h-14 w-auto"
+          />
         </a>
 
         <ul className="hidden lg:flex items-center gap-1">
@@ -98,7 +82,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, "#contact")}
-              className="ml-2 bg-gold text-brown-deep text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 transition-all"
+              className="ml-2 bg-white text-brown text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-cream-dark hover:-translate-y-0.5 transition-all shadow-md"
             >
               Plan a Visit
             </a>
@@ -136,7 +120,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => handleLinkClick(e, "#contact")}
-                className="block text-center bg-gold text-brown-deep font-semibold px-6 py-3 rounded-full hover:bg-gold-light transition-all"
+                className="block text-center bg-white text-brown font-semibold px-6 py-3 rounded-full hover:bg-cream-dark transition-all"
               >
                 Plan a Visit
               </a>

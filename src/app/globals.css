@@ -4,22 +4,25 @@
   --font-sans: var(--font-lato);
   --font-serif: var(--font-playfair);
 
-  /* Law of Liberty palette — warm burgundy + gold + cream */
-  --color-gold: #d4a84a;
-  --color-gold-light: #ead49a;
-  --color-gold-dark: #a87e1f;
-  --color-cream: #faf5ec;
-  --color-cream-dark: #efe4cc;
-  --color-warm-white: #fdfaf3;
-  --color-brown-deep: #2a1118;
-  --color-brown: #4a1d2b;
-  --color-brown-light: #6b2d3e;
-  --color-burgundy: #7a3546;
-  --color-burgundy-dark: #4a1a26;
-  --color-text-dark: #2a1a1e;
-  --color-text-body: #4a3b3f;
-  --color-text-light: #786a6d;
-  --color-text-muted: #9e9088;
+  /* Law of Liberty palette — blue gradient + white (matches church logo) */
+  /* Note: token names preserved from the starter; values remapped to the blue brand. */
+  /* "gold" = bright sky-blue accent (contrasts on navy); "cream" = pale blue bg tint. */
+
+  --color-gold: #7cc3f5;
+  --color-gold-light: #b0dcfa;
+  --color-gold-dark: #1e7ad2;
+  --color-cream: #f0f7fd;
+  --color-cream-dark: #d9ecfb;
+  --color-warm-white: #ffffff;
+  --color-brown-deep: #0a2849;
+  --color-brown: #134680;
+  --color-brown-light: #2b82d6;
+  --color-burgundy: #4ba5ea;
+  --color-burgundy-dark: #0c3d78;
+  --color-text-dark: #0d1a2e;
+  --color-text-body: #334155;
+  --color-text-light: #64748b;
+  --color-text-muted: #94a3b8;
 }
 
 html {
