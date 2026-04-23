@@ -60,9 +60,9 @@ export default function Navbar() {
           aria-label="Law of Liberty Baptist Church"
         >
           <img
-            src="/lol-logo-favco.png"
+            src="/lol-flat-logo.png"
             alt="Law of Liberty Baptist Church"
-            className="h-12 sm:h-14 w-auto"
+            className="h-10 sm:h-12 w-auto"
           />
         </a>
 

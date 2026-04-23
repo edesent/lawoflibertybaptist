@@ -7,19 +7,19 @@ import AnimateOnScroll from "./AnimateOnScroll";
 // Swap these IDs to update what appears on the homepage.
 const featuredVideos = [
   {
-    id: "I-HbqZCtapo",
-    title: "Joseph — Discreet & Wise Ruler",
-    series: "Bible Heroes Series",
+    id: "r4d8oMBYhuE",
+    title: "What's the Vision of Law of Liberty Baptist Church?",
+    series: "From the Pastor",
   },
   {
-    id: "dHs8a_2t6LA",
-    title: "Asaph the Prophet",
+    id: "Kx5bWQM7Xqw",
+    title: "Jesus is God, Jesus is Creator",
     series: "Sunday Preaching",
   },
   {
-    id: "UflbJlhInKs",
-    title: "Welcome to Law of Liberty Baptist Church",
-    series: "About Us",
+    id: "tLDoZPdkcHw",
+    title: "GPS — How to Share the Gospel with Anyone",
+    series: "Soul-Winning",
   },
 ];
 

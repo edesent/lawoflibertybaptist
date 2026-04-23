@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const ADDRESS = "485 Halsema Rd N, Jacksonville, FL 32220";
@@ -11,6 +11,20 @@ type FormState = "idle" | "submitting" | "sent" | "error";
 
 export default function Contact() {
   const [state, setState] = useState<FormState>("idle");
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -89,23 +103,11 @@ export default function Contact() {
                 </div>
               </div>
             </AnimateOnScroll>
-
-            <AnimateOnScroll delay={300}>
-              <div className="mt-8 p-7 bg-cream rounded-xl border-l-4 border-gold">
-                <h3 className="font-serif text-lg font-semibold text-text-dark mb-2">What to Expect</h3>
-                <p className="text-[0.92rem] text-text-light leading-relaxed">
-                  When you visit, you&rsquo;ll be greeted by friendly faces in a welcoming atmosphere.
-                  Come as you are — whether in your Sunday best or casual clothes. Our services
-                  include traditional hymns, heartfelt prayer, and verse-by-verse Bible preaching.
-                  Families sit together; children are welcome in every service.
-                </p>
-              </div>
-            </AnimateOnScroll>
           </div>
 
-          {/* Map + Form */}
-          <div className="space-y-8">
-            <AnimateOnScroll delay={150}>
+          {/* Map + Buttons */}
+          <AnimateOnScroll delay={150}>
+            <div>
               <div className="rounded-2xl overflow-hidden shadow-lg aspect-[4/3] bg-cream-dark">
                 <iframe
                   src={MAP_EMBED}
@@ -117,75 +119,109 @@ export default function Contact() {
                   className="border-0"
                 />
               </div>
-              <a
-                href={MAPS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center mt-4 bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
-              >
-                Get Directions
-              </a>
-            </AnimateOnScroll>
-
-            <AnimateOnScroll delay={250}>
-              <form
-                onSubmit={handleSubmit}
-                className="bg-white border border-brown-deep/[.06] rounded-2xl p-7 shadow-sm"
-              >
-                <h3 className="font-serif text-xl font-semibold text-text-dark mb-1">
-                  Send us a message
-                </h3>
-                <p className="text-sm text-text-light mb-5">
-                  Have a question? Want prayer? We&rsquo;d love to hear from you.
-                </p>
-
-                <div className="grid sm:grid-cols-2 gap-3 mb-3">
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    placeholder="Your name"
-                    className="w-full px-4 py-3 bg-cream/50 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-gold focus:bg-white transition-all"
-                  />
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="Email address"
-                    className="w-full px-4 py-3 bg-cream/50 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-gold focus:bg-white transition-all"
-                  />
-                </div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone (optional)"
-                  className="w-full px-4 py-3 mb-3 bg-cream/50 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-gold focus:bg-white transition-all"
-                />
-                <textarea
-                  name="message"
-                  required
-                  rows={4}
-                  placeholder="How can we pray for you, or what can we answer?"
-                  className="w-full px-4 py-3 mb-4 bg-cream/50 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-gold focus:bg-white transition-all resize-none"
-                />
-
-                <button
-                  type="submit"
-                  disabled={state === "submitting" || state === "sent"}
-                  className="w-full bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-gold-light hover:-translate-y-0.5 hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:transform-none"
+              <div className="mt-5 flex flex-col gap-3">
+                <a
+                  href={MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light hover:bg-brown hover:border-brown hover:-translate-y-0.5 hover:shadow-lg transition-all"
                 >
-                  {state === "submitting" ? "Sending…" : state === "sent" ? "Thank you! We&rsquo;ll be in touch." : "Send Message"}
+                  Get Directions
+                </a>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setState("idle");
+                    setOpen(true);
+                  }}
+                  className="block text-center text-brown-light font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full border-2 border-brown-light/40 hover:bg-brown-light/5 hover:border-brown-light hover:-translate-y-0.5 transition-all"
+                >
+                  Send Us a Message
                 </button>
-                {state === "error" && (
-                  <p className="text-sm text-burgundy mt-3 text-center">
-                    Something went wrong. Please call us at (904) 364-4050.
-                  </p>
-                )}
-              </form>
-            </AnimateOnScroll>
-          </div>
+              </div>
+            </div>
+          </AnimateOnScroll>
         </div>
       </div>
+
+      {/* Contact form modal */}
+      {open && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 md:p-8 animate-fade-up"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+              className="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-cream transition-colors"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 text-text-dark">
+                <path d="M6 6l12 12M6 18L18 6" strokeLinecap="round" />
+              </svg>
+            </button>
+
+            <form onSubmit={handleSubmit} className="p-7 md:p-9">
+              <h3 className="font-serif text-2xl font-bold text-text-dark mb-1">
+                Send us a message
+              </h3>
+              <p className="text-sm text-text-light mb-6">
+                Have a question? Want prayer? We&rsquo;d love to hear from you.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-3 mb-3">
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="w-full px-4 py-3 bg-cream/60 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-brown-light focus:bg-white transition-all"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Email address"
+                  className="w-full px-4 py-3 bg-cream/60 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-brown-light focus:bg-white transition-all"
+                />
+              </div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone (optional)"
+                className="w-full px-4 py-3 mb-3 bg-cream/60 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-brown-light focus:bg-white transition-all"
+              />
+              <textarea
+                name="message"
+                required
+                rows={4}
+                placeholder="How can we pray for you, or what can we answer?"
+                className="w-full px-4 py-3 mb-5 bg-cream/60 border border-brown-deep/[.08] rounded-lg text-sm text-text-dark placeholder:text-text-muted focus:outline-none focus:border-brown-light focus:bg-white transition-all resize-none"
+              />
+
+              <button
+                type="submit"
+                disabled={state === "submitting" || state === "sent"}
+                className="w-full bg-brown-light text-white font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-brown hover:-translate-y-0.5 hover:shadow-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:transform-none"
+              >
+                {state === "submitting"
+                  ? "Sending…"
+                  : state === "sent"
+                  ? "Thank you! We’ll be in touch."
+                  : "Send Message"}
+              </button>
+              {state === "error" && (
+                <p className="text-sm text-burgundy mt-3 text-center">
+                  Something went wrong. Please call us at (904) 364-4050.
+                </p>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
