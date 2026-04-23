@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Meet Pastor Adam Fannin",
@@ -26,17 +28,15 @@ export default function Pastor() {
 
           <div className="grid md:grid-cols-5 gap-10 items-start">
             <div className="md:col-span-2">
-              <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-cream-dark">
-                {/* Placeholder — swap for /pastor.jpg when available */}
-                <svg viewBox="0 0 400 500" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-                  <rect width="400" height="500" fill="#efe4cc" />
-                  <circle cx="200" cy="200" r="70" fill="#d4a84a" opacity="0.35" />
-                  <path
-                    d="M120 420 C 120 340, 280 340, 280 420 L 280 500 L 120 500 Z"
-                    fill="#d4a84a"
-                    opacity="0.25"
-                  />
-                </svg>
+              <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-cream-dark">
+                <Image
+                  src="/pastor-headshot.png"
+                  alt="Pastor Adam Fannin"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover object-center"
+                />
               </div>
               <p className="text-center text-sm text-text-light italic mt-3">
                 Pastor Adam Fannin
@@ -62,18 +62,18 @@ export default function Pastor() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                <Link
                   href="/#watch"
                   className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-7 py-3 rounded-full hover:bg-gold-light transition-all"
                 >
                   Listen to Sermons
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/#contact"
                   className="inline-block text-brown-deep font-semibold text-sm tracking-wide uppercase px-7 py-3 rounded-full border-2 border-brown-deep/30 hover:bg-brown-deep hover:text-white hover:border-brown-deep transition-all"
                 >
                   Get in Touch
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Our Mission",
@@ -91,12 +92,12 @@ export default function Mission() {
           </div>
 
           <div className="text-center mt-12">
-            <a
+            <Link
               href="/#contact"
               className="inline-block bg-gold text-brown-deep font-semibold text-sm tracking-wide uppercase px-8 py-3.5 rounded-full hover:bg-gold-light transition-all"
             >
               Plan a Visit
-            </a>
+            </Link>
           </div>
         </div>
       </main>

@@ -1,6 +1,7 @@
 "use client";
 
 import AnimateOnScroll from "./AnimateOnScroll";
+import Image from "next/image";
 
 export default function Welcome() {
   return (
@@ -8,28 +9,14 @@ export default function Welcome() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <AnimateOnScroll>
-            <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-cream-dark">
-              {/* Placeholder — swap for /pastor.jpg when available */}
-              <svg viewBox="0 0 400 500" className="w-full h-full" preserveAspectRatio="xMidYMid slice">
-                <rect width="400" height="500" fill="#d9ecfb" />
-                <circle cx="200" cy="200" r="70" fill="#1e7ad2" opacity="0.35" />
-                <path
-                  d="M120 420 C 120 340, 280 340, 280 420 L 280 500 L 120 500 Z"
-                  fill="#1e7ad2"
-                  opacity="0.3"
-                />
-                <text
-                  x="200"
-                  y="470"
-                  textAnchor="middle"
-                  fill="#0c3d78"
-                  fontSize="14"
-                  fontFamily="serif"
-                  opacity="0.65"
-                >
-                  Pastor Adam Fannin
-                </text>
-              </svg>
+            <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-cream-dark">
+              <Image
+                src="/pastor-headshot.png"
+                alt="Pastor Adam Fannin"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover object-center"
+              />
             </div>
           </AnimateOnScroll>
 
